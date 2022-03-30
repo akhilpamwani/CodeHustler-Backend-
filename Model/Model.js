@@ -9,11 +9,14 @@ const Schema = mongoose.Schema;
 // Creating Model Schema
 
 const BlogData = Schema({
-    Title: { type: String ,required:true},
-    Image: { type: String ,required:true},
-    Paragraph: { type: String ,required:true},
+    Title: { type: String, required: true },
+  
+    Paragraph: { type: {}, required: true },
+    Slug: { type: String, unique: true, index: true, lowercase: true },
+},
+{timestamps:true}
 
-});
+);
 
 
 const ContactData = Schema({
@@ -25,12 +28,15 @@ const ContactData = Schema({
     
 
 });
-
+const AdminData = Schema({
+    email: { type: String, required: true },
+    password:{type:String, required: true},
+})
 // Creating Model
 
 const BlogModel = mongoose.model("BlogData", BlogData);
 const ContactModel = mongoose.model("ContactData", ContactData);
-
+const AdminModel= mongoose.model('AdminData',AdminData)
 // Exporting Model
-
-module.exports = { BlogModel, ContactModel } 
+ 
+module.exports = { BlogModel, ContactModel,AdminModel } 
