@@ -11,10 +11,11 @@ const Schema = mongoose.Schema;
 const BlogData = Schema({
     Title: { type: String, required: true },
   
-    Paragraph: { type: {}, required: true },
-    Slug: { type: String, unique: true, index: true, lowercase: true },
+    Paragraph: { type: String, required: true },
+    Description: { type: String, required: true },
+     slug: { type: String, unique: true, index: true, lowercase: true,required:true },
 },
-{timestamps:true}
+ {timestamps:true}
 
 );
 

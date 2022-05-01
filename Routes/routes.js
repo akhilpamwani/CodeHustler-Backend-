@@ -9,7 +9,7 @@ router.route('/ContactData').post(Controllers.ContactSaveData);
 
 // Blog Read , Read One , Update and Delete Routes
 router.route('/BlogRead').get(Controllers.DisplayBlog);
-router.route('BlogReadOne').get(Controllers.DisplayOneBlog);
+router.route('/BlogReadOne/:slug').get(Controllers.DisplayOneBlog);
 router.route('/BlogUpdate').put(Controllers.UpdateBlog);
 router.route('/BlogDelete/:id').delete(Controllers.DeleteBlog);
 router.route('/ContactRead').get(Controllers.DisplayContact);
